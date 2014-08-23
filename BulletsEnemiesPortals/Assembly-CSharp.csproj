@@ -49,6 +49,7 @@
      <Compile Include="Assets\Bullet.cs" />
      <Compile Include="Assets\DestroyOtherOnCollision.cs" />
      <Compile Include="Assets\DieOnCollision.cs" />
+     <Compile Include="Assets\ExitOnEscape.cs" />
      <Compile Include="Assets\InPortal.cs" />
      <Compile Include="Assets\OutPortal.cs" />
      <Compile Include="Assets\Shooter.cs" />
