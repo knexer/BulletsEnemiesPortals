@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Shooter : MonoBehaviour {
 
-    public GameObject bullet;
+    public Bullet bullet;
 
     private float lastBulletTime = 0;
 
@@ -21,7 +21,7 @@ public class Shooter : MonoBehaviour {
 	}
 
     private void spawnBullet() {
-        GameObject bulletInst = (GameObject) Instantiate(bullet, transform.position, bullet.transform.rotation);
+        GameObject bulletInst = (GameObject) Instantiate(bullet.gameObject, transform.position, bullet.gameObject.transform.rotation);
         bulletInst.rigidbody2D.velocity = new Vector2(-3, 0);
     }
 }
