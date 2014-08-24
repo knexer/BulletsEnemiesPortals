@@ -5,10 +5,14 @@ using System;
 public class InPortal : MonoBehaviour {
 
     public OutPortal pair;
+    public AudioClip sound;
+
+    private AudioSource audio;
 
 	// Use this for initialization
 	void Start () {
-	
+        audio = gameObject.AddComponent<AudioSource>();
+        audio.clip = sound;
 	}
 	
 	// Update is called once per frame
@@ -24,5 +28,6 @@ public class InPortal : MonoBehaviour {
         Vector2 prevV = col.gameObject.rigidbody2D.velocity;
         col.gameObject.rigidbody2D.velocity = new Vector2(prevV.y, -prevV.x);
         col.gameObject.transform.Rotate(new Vector3(0, 0, 1), -90);
+        audio.Play();
     }
 }
