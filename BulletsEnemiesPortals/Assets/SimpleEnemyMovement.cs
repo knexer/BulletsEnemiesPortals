@@ -4,8 +4,6 @@ using System.Collections.Generic;
 
 public class SimpleEnemyMovement : MonoBehaviour
 {
-    public enum Direction { Right, Left, Down };
-
     public GameObject playAreaBoundsHolder;
 
     public float width;
