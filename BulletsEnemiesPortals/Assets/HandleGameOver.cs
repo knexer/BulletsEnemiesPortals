@@ -10,15 +10,9 @@ public class HandleGameOver : MonoBehaviour {
 
     public string gameOverMessage = "Game Over man! Game over!";
 
-	// Use this for initialization
-	void Start () {
-	    
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    void OnLevelWasLoaded() {
+        Destroy(gameObject);
+    }
 
     void OnGUI() {
         GUI.skin = skin;

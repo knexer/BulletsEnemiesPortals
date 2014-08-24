@@ -15,6 +15,7 @@ public class HandlePortalDeath : MonoBehaviour {
         if (isShuttingDown) return;
 
         Time.timeScale = 0;
+        Screen.lockCursor = false;
         GameObject gameOver = new GameObject();
         HandleGameOver message = gameOver.AddComponent<HandleGameOver>();
         message.skin = skin;

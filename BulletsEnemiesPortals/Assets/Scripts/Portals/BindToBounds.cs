@@ -28,6 +28,8 @@ public class BindToBounds : MonoBehaviour {
         } else if (transform.position.y < myBounds.yMin) {
             newY = myBounds.yMin;
         }
+
+        transform.position = new Vector3(newX, newY, transform.position.z);
 	}
 
     public enum World {

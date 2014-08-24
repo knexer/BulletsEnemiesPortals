@@ -5,6 +5,7 @@ public class VoteForGameNotLose : MonoBehaviour {
 
     public GUISkin skin;
 
+    private static bool isShuttingDown = false;
     private const int width = 400;
     private const int height = 300;
 
@@ -21,27 +22,18 @@ public class VoteForGameNotLose : MonoBehaviour {
         numVotes--;
         if (numVotes <= 0)
         {
-            isLoose = true;
+            if (isShuttingDown) return;
+
             Time.timeScale = 0;
+            Screen.lockCursor = false;
+            GameObject gameOver = new GameObject();
+            HandleGameOver message = gameOver.AddComponent<HandleGameOver>();
+            message.skin = skin;
+            message.gameOverMessage = "You Loose!";
         }
     }
 
-    void OnGUI() {
-        if (isLoose) {
-            Debug.LogError("Showing menu");
-            GUI.skin = skin;
-            GUI.Window(0, new Rect((Screen.width - width) / 2, (Screen.height - height) / 2, width, height), layoutWindow, "You Loose!");
-        }
-    }
-
-    public void layoutWindow(int id) {
-        GUILayout.BeginHorizontal();
-        GUILayout.Space(70);
-        if (GUILayout.Button("Okay")) {
-            Time.timeScale = 1;
-            Application.LoadLevel("MainMenu");
-        }
-        GUILayout.Space(70);
-        GUILayout.EndHorizontal();
+    void OnApplicationQuit() {
+        isShuttingDown = true;
     }
 }

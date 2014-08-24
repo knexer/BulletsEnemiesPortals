@@ -17,6 +17,7 @@ public class EscapeMenu : MonoBehaviour {
     void Update() {
         if (Input.GetKeyDown(KeyCode.Escape)) {
             isShow = true;
+            Screen.lockCursor = false;
             Time.timeScale = 0;
         }
     }
@@ -33,6 +34,7 @@ public class EscapeMenu : MonoBehaviour {
 
         if (GUILayout.Button("Resume")) {
             isShow = false;
+            Screen.lockCursor = true;
             Time.timeScale = 1;
         }
 
