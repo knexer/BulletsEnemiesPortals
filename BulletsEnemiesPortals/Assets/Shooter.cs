@@ -16,7 +16,7 @@ public class Shooter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    if (Time.time - lastBulletTime >= 0.7) {
+	    if (Time.time - lastBulletTime >= 1.5) {
             spawnBullet();
             lastBulletTime = Time.time;
         }

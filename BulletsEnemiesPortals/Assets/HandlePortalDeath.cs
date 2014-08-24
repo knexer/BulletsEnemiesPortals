@@ -3,22 +3,21 @@ using System.Collections;
 
 public class HandlePortalDeath : MonoBehaviour {
 
-    public GUISkin skin;
+    private static bool isShuttingDown = false;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public GUISkin skin;
+ 
+    void OnApplicationQuit() {
+        isShuttingDown = true;
+    }
 
     void OnDestroy() {
+        if (isShuttingDown) return;
+
         Time.timeScale = 0;
         GameObject gameOver = new GameObject();
-        gameOver.AddComponent<HandleGameOver>().gameOverMessage = "You Win!";
-        gameOver.GetComponent<HandleGameOver>().skin = skin;
+        HandleGameOver message = gameOver.AddComponent<HandleGameOver>();
+        message.skin = skin;
+        message.gameOverMessage = "You Win!";
     }
 }

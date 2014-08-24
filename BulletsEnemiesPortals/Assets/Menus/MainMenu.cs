@@ -5,7 +5,7 @@ public class MainMenu : MonoBehaviour {
 
     public GUISkin skin;
 
-    private const int size = 700;
+    private const int size = 570;
 
     void Start() {
         Debug.LogError("Time scale is " + Time.timeScale);
@@ -49,6 +49,6 @@ public class MainMenu : MonoBehaviour {
         GUILayout.Space(100);
         GUILayout.EndHorizontal();
 
-        GUILayout.Space(100);
+        GUILayout.Space(20);
     }
 }

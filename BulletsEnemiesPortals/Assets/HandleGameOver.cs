@@ -5,7 +5,7 @@ public class HandleGameOver : MonoBehaviour {
 
     public GUISkin skin;
 
-    private const int height = 700;
+    private const int height = 300;
     private const int width = 400;
 
     public string gameOverMessage = "Game Over man! Game over!";
@@ -28,15 +28,11 @@ public class HandleGameOver : MonoBehaviour {
     public void layoutWindow(int id) {
         GUILayout.FlexibleSpace();
 
-        if (GUILayout.Button("Exit to Menu")) {
+        if (GUILayout.Button("Okay")) {
             Time.timeScale = 1;
             Application.LoadLevel("MainMenu");
         }
 
-        if (GUILayout.Button("Exit to Desktop")) {
-            Application.Quit();
-        }
-
-        GUILayout.Space(100);
+        GUILayout.Space(50);
     }
 }
