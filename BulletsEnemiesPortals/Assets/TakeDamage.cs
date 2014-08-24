@@ -15,7 +15,6 @@ public class TakeDamage : MonoBehaviour {
 
     public bool takeDamage(int damage) {
         HP -= damage;
-        Debug.Log(HP.ToString());
         if (HP <= 0) {
             Destroy(this);
             return true;
