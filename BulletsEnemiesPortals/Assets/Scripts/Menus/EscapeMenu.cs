@@ -31,6 +31,7 @@ public class EscapeMenu : MonoBehaviour {
         if (GUILayout.Button("Resume")) {
             isShow = false;
             Screen.lockCursor = true;
+            Time.timeScale = 1;
         }
 
         GUILayout.Button("Unlocks");

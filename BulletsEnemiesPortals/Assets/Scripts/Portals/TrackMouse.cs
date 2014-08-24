@@ -10,8 +10,10 @@ public class TrackMouse : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Vector2 mouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
-        Vector3 worldOffset = Camera.main.ScreenToWorldPoint(mouseDelta) - Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
-        transform.position += worldOffset * 2;
+        if (Time.timeScale != 0) {
+            Vector2 mouseDelta = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y"));
+            Vector3 worldOffset = Camera.main.ScreenToWorldPoint(mouseDelta) - Camera.main.ScreenToWorldPoint(new Vector3(0, 0, 0));
+            transform.position += worldOffset * 2;
+        }
 	}
 }
