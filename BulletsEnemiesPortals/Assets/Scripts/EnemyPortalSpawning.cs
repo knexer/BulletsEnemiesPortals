@@ -19,6 +19,6 @@ public class EnemyPortalSpawning : MonoBehaviour {
 	}
 
     private void spawnEnemy() {
-        Instantiate(spawnee.gameObject, transform.position, spawnee.gameObject.transform.rotation);
+        Instantiate(spawnee.gameObject, transform.position + new Vector3(0, -0.5f, 0), spawnee.gameObject.transform.rotation);
     }
 }
