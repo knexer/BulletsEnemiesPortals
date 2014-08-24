@@ -7,7 +7,7 @@ public class EscapeMenu : MonoBehaviour {
 
     private bool isShow = false;
 
-    private const int height = 700;
+    private const int height = 550;
     private const int width = 400;
 
     void Update() {
@@ -44,6 +44,6 @@ public class EscapeMenu : MonoBehaviour {
             Application.Quit();
         }
 
-        GUILayout.Space(100);
+        GUILayout.Space(50);
     }
 }
