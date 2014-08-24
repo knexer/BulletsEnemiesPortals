@@ -33,7 +33,7 @@ public class SimpleEnemyMovement : MonoBehaviour
 	
 	// Update is called once per frame
 	void Update () {
-        transform.position += unitVectors[currentDirection] * velocity;
+        transform.position += unitVectors[currentDirection] * velocity * Time.deltaTime;
         switch (currentDirection)
         {
             case Direction.Left:
