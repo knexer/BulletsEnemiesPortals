@@ -10,7 +10,6 @@ public class VoteForGameNotLose : MonoBehaviour {
     private const int height = 300;
 
     static int numVotes = 0;
-    private bool isLoose = false;
 
 	// Use this for initialization
 	void Start () {

@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour {
     private const int size = 570;
 
     void Start() {
-        Debug.LogError("Time scale is " + Time.timeScale);
+        Time.timeScale = 1;
     }
 
     void OnGUI() {
