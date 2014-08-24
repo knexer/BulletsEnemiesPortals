@@ -15,11 +15,21 @@ public class DieOnCollision : MonoBehaviour {
 	
 	}
 
-    void OnCollisionEnter2D(Collision2D other)
+    void checkAndDie(GameObject other)
     {
-        if ((LayerMask & 1 << other.gameObject.layer) > 0)
+        if ((LayerMask & 1 << other.layer) > 0)
         {
             Destroy(gameObject);
         }
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        checkAndDie(other.gameObject);
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        checkAndDie(other.gameObject);
     }
 }
