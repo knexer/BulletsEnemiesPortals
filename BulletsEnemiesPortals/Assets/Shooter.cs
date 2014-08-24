@@ -14,7 +14,7 @@ public class Shooter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    if (Time.time - lastBulletTime >= 1.6) {
+	    if (Time.time - lastBulletTime >= 0.7) {
             spawnBullet();
             lastBulletTime = Time.time;
         }
@@ -22,6 +22,6 @@ public class Shooter : MonoBehaviour {
 
     private void spawnBullet() {
         GameObject bulletInst = (GameObject) Instantiate(bullet.gameObject, transform.position, bullet.gameObject.transform.rotation);
-        bulletInst.rigidbody2D.velocity = new Vector2(-3, 0);
+        bulletInst.rigidbody2D.velocity = new Vector2(-6, 0);
     }
 }
