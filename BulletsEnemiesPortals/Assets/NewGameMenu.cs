@@ -5,6 +5,8 @@ public class NewGameMenu : MonoBehaviour {
 
     public GUISkin skin;
 
+    private const int size = 700;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -17,15 +19,32 @@ public class NewGameMenu : MonoBehaviour {
 
     void OnGUI() {
         GUI.skin = skin;
-        GUI.Window(0, new Rect(200, 50, 700, 700), layoutWindow, "Bullets, Enemies,\nPortals");
+        GUI.Window(0, new Rect((Screen.width - size) / 2, (Screen.height - size) / 2, size, size), layoutWindow, "Bullets, Enemies,\nPortals");
     }
 
     public void layoutWindow(int id) {
-        GUILayout.Space(100);
+        GUILayout.FlexibleSpace();
+
+        GUIStyle largeButton = new GUIStyle(skin.button);
+        largeButton.fontSize = 50;
         GUILayout.BeginHorizontal();
-        GUILayout.FlexibleSpace();
-        GUILayout.Button("Start");
-        GUILayout.FlexibleSpace();
+        GUILayout.Space(100);
+        GUILayout.Button("Play", largeButton);
+        GUILayout.Space(100);
         GUILayout.EndHorizontal();
+
+        GUILayout.BeginHorizontal();
+        GUILayout.Space(100);
+        GUILayout.Button("Unlocks");
+        GUILayout.Space(100);
+        GUILayout.EndHorizontal();
+
+        GUILayout.BeginHorizontal();
+        GUILayout.Space(100);
+        GUILayout.Button("Options");
+        GUILayout.Space(100);
+        GUILayout.EndHorizontal();
+
+        GUILayout.Space(100);
     }
 }
