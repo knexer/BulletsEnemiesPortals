@@ -1,21 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class NewGameMenu : MonoBehaviour {
+public class MainMenu : MonoBehaviour {
 
     public GUISkin skin;
 
     private const int size = 700;
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
 
     void OnGUI() {
         GUI.skin = skin;
@@ -29,7 +19,9 @@ public class NewGameMenu : MonoBehaviour {
         largeButton.fontSize = 50;
         GUILayout.BeginHorizontal();
         GUILayout.Space(100);
-        GUILayout.Button("Play", largeButton);
+        if (GUILayout.Button("Play", largeButton)) {
+            Application.LoadLevel("SkittlesWorld");
+        }
         GUILayout.Space(100);
         GUILayout.EndHorizontal();
 
@@ -42,6 +34,14 @@ public class NewGameMenu : MonoBehaviour {
         GUILayout.BeginHorizontal();
         GUILayout.Space(100);
         GUILayout.Button("Options");
+        GUILayout.Space(100);
+        GUILayout.EndHorizontal();
+
+        GUILayout.BeginHorizontal();
+        GUILayout.Space(100);
+        if (GUILayout.Button("Exit")) {
+            Application.Quit();
+        }
         GUILayout.Space(100);
         GUILayout.EndHorizontal();
 
