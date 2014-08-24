@@ -56,7 +56,7 @@ public class SimpleEnemyMovement : MonoBehaviour
                 if (transform.position.y < nextVerticalStepHeight)
                 {
                     transform.position = new Vector3(transform.position.x, nextVerticalStepHeight, transform.position.z);
-                    if (transform.position.x < 0) currentDirection = Direction.Right;
+                    if (transform.position.x < ((playAreaBounds.xMax + playAreaBounds.xMin) / 2)) currentDirection = Direction.Right;
                     else currentDirection = Direction.Left;
                 }
                 break;
