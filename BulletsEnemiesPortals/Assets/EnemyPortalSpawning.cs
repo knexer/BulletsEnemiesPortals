@@ -4,7 +4,7 @@ using System.Collections;
 public class EnemyPortalSpawning : MonoBehaviour {
     public float lastSpawn;
     public float spawnRate;
-    public GameObject spawnee;
+    public Enemy spawnee;
 	// Use this for initialization
 	void Start () {
         lastSpawn = Time.time;
