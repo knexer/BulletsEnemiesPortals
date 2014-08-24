@@ -7,6 +7,10 @@ public class MainMenu : MonoBehaviour {
 
     private const int size = 700;
 
+    void Start() {
+        Debug.LogError("Time scale is " + Time.timeScale);
+    }
+
     void OnGUI() {
         GUI.skin = skin;
         GUI.Window(0, new Rect((Screen.width - size) / 2, (Screen.height - size) / 2, size, size), layoutWindow, "Bullets, Enemies,\nPortals");

@@ -10,6 +10,10 @@ public class EscapeMenu : MonoBehaviour {
     private const int height = 550;
     private const int width = 400;
 
+    void Start() {
+        Debug.LogError("Time scale is " + Time.timeScale);
+    }
+
     void Update() {
         if (Input.GetKeyDown(KeyCode.Escape)) {
             isShow = true;
@@ -37,6 +41,7 @@ public class EscapeMenu : MonoBehaviour {
 
         if (GUILayout.Button("Exit to Menu")) {
             Time.timeScale = 1;
+            Debug.LogError("Set time scale to " + Time.timeScale);
             Application.LoadLevel("MainMenu");
         }
 
