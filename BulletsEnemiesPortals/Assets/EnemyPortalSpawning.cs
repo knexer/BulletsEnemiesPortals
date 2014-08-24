@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class EnemyPortalSpawning : MonoBehaviour {
-    public float lastSpawn;
+    private float lastSpawn;
     public float spawnRate;
     public Enemy spawnee;
 	// Use this for initialization
