@@ -36,6 +36,7 @@ public class EscapeMenu : MonoBehaviour {
         GUILayout.Button("Options");
 
         if (GUILayout.Button("Exit to Menu")) {
+            Time.timeScale = 1;
             Application.LoadLevel("MainMenu");
         }
 
