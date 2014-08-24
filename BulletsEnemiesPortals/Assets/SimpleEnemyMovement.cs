@@ -41,7 +41,7 @@ public class SimpleEnemyMovement : MonoBehaviour
             case Direction.Left:
                 if (transform.position.x - width / 2.0f <= playAreaBounds.xMin)
                 {
-                    transform.position = new Vector3(playAreaBounds.xMin, transform.position.y, transform.position.z);
+                    transform.position = new Vector3(playAreaBounds.xMin + width / 2.0f, transform.position.y, transform.position.z);
                     currentDirection = Direction.Down;
                     StartDown();
                 }
@@ -49,7 +49,7 @@ public class SimpleEnemyMovement : MonoBehaviour
             case Direction.Right:
                 if (transform.position.x + width / 2.0f >= playAreaBounds.xMax)
                 {
-                    transform.position = new Vector3(playAreaBounds.xMax, transform.position.y, transform.position.z);
+                    transform.position = new Vector3(playAreaBounds.xMax - width / 2.0f, transform.position.y, transform.position.z);
                     currentDirection = Direction.Down;
                     StartDown();
                 }
