@@ -15,11 +15,21 @@ public class DestroyOtherOnCollision : MonoBehaviour {
 	
 	}
 
-    void OnCollisionEnter2D(Collision2D other)
+    void checkAndDestroy(GameObject other)
     {
         if ((LayerMask & 1 << other.gameObject.layer) > 0)
         {
             Destroy(other.gameObject);
         }
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        checkAndDestroy(other.gameObject);
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        checkAndDestroy(other.gameObject);
     }
 }
