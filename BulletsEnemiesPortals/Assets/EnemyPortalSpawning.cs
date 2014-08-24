@@ -20,6 +20,6 @@ public class EnemyPortalSpawning : MonoBehaviour {
 	}
 
     private void spawnEnemy() {
-        GameObject enemyInst = (GameObject) Instantiate(spawnee, transform.position, spawnee.transform.rotation);
+        Instantiate(spawnee.gameObject, transform.position, spawnee.gameObject.transform.rotation);
     }
 }
