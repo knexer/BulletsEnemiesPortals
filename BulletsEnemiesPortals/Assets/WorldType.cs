@@ -6,6 +6,7 @@ public class WorldType : MonoBehaviour {
     public GameObject friendly;
     public Bullet bullet;
     public Sprite background;
+    public Sprite upper_background;
 
 
 	// Use this for initialization
