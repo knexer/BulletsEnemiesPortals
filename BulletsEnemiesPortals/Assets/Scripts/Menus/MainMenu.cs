@@ -42,12 +42,34 @@ public class MainMenu : MonoBehaviour {
 
     public void unlocksMenu(int id) {
         GUILayout.FlexibleSpace();
-        printButton("Return to Main Menu", () => currentMenu = 0);
+        GUILayout.BeginHorizontal();
+
+        UnlockData[] unlocks = FindObjectsOfType<UnlockData>();
+        for (int i = 0; i < unlocks.Length; i++ ) {
+            UnlockData unlock = unlocks[i];
+            GUIContent content = new GUIContent();
+            content.text = unlock.name;
+            content.image = unlock.texture;
+            content.tooltip = unlock.description;
+
+            if (i != 0 && i % 2 == 0) {
+                GUILayout.EndHorizontal();
+                GUILayout.BeginHorizontal();
+            }
+
+            GUI.enabled = unlock.isUnlocked;
+            unlock.isActivated = GUILayout.Toggle(unlock.isActivated, content);
+            GUI.enabled = true;
+        }
+
+        GUILayout.EndHorizontal();
+        GUILayout.FlexibleSpace();
+        printButton("Back", () => currentMenu = 0);
     }
 
     public void optionsMenu(int id) {
         GUILayout.FlexibleSpace();
-        printButton("Return to Main Menu", () => currentMenu = 0);
+        printButton("Back", () => currentMenu = 0);
     }
 
 
