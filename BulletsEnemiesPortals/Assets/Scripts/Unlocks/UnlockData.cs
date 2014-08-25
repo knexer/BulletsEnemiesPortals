@@ -17,8 +17,9 @@ public class UnlockData : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
     }
 
-    void ActivateUnlock()
+    public void ActivateUnlock()
     {
-        Instantiate(UnlockEffector);
+        GameObject instantiatedEffector = (GameObject)Instantiate(UnlockEffector);
+        instantiatedEffector.SetActive(true);
     }
 }
