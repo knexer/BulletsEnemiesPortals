@@ -11,7 +11,14 @@ public class UnlockData : MonoBehaviour {
     public bool isActivated = false;
     public bool isUnlocked = false;
 
+    public GameObject UnlockEffector;
+
     void Awake() {
         DontDestroyOnLoad(gameObject);
+    }
+
+    void ActivateUnlock()
+    {
+        Instantiate(UnlockEffector);
     }
 }
