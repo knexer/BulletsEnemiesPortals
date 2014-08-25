@@ -7,7 +7,7 @@ public class SetupEnemyWorld : MonoBehaviour {
 	void Start () {
         OptionsDictionary options = FindObjectOfType<OptionsDictionary>();
 
-        this.GetComponent<SpriteRenderer>().sprite = options.enemyWorld.background;
+        this.GetComponent<SpriteRenderer>().sprite = options.enemyWorld.upper_background;
 	}
 	
 	// Update is called once per frame
