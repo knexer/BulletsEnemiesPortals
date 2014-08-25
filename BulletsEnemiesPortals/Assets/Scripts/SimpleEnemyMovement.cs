@@ -67,4 +67,12 @@ public class SimpleEnemyMovement : MonoBehaviour
     {
         nextVerticalStepHeight = transform.position.y - verticalStepSize;
     }
+
+    public void SwitchDirections()
+    {
+        if (InitialDirection == Direction.Right) InitialDirection = Direction.Left;
+        else if (InitialDirection == Direction.Left) InitialDirection = Direction.Right;
+        if (currentDirection == Direction.Right) currentDirection = Direction.Left;
+        else if (currentDirection == Direction.Left) currentDirection = Direction.Right;
+    }
 }
