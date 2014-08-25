@@ -1,10 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class OptionsDictionary : MonoBehaviour {
-    public WorldType bulletWorld;
-    public WorldType enemyWorld;
-    public WorldType friendlyWorld;
+public class DefendeeGenerator : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
