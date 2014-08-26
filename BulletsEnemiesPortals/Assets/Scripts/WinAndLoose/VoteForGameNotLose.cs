@@ -28,7 +28,7 @@ public class VoteForGameNotLose : MonoBehaviour {
             GameObject gameOver = new GameObject();
             HandleGameOver message = gameOver.AddComponent<HandleGameOver>();
             message.skin = skin;
-            message.gameOverMessage = "You Loose!";
+            message.gameOverMessage = "You Lose!";
         }
     }
 
