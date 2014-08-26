@@ -16,6 +16,7 @@ public abstract class BulletGenerator : MonoBehaviour {
 	// Use this for initialization
 	protected void Start () {
         lowerAreaBoundaries = GameBoundaries.LowerWorld;
+        BulletToFire = OptionsDictionary.instance.bulletWorld.bullet.gameObject;
 	}
 	
 	// Update is called once per frame
