@@ -54,7 +54,7 @@ public class BurstedBullets : BulletGenerator
 
         Vector3 position = new Vector3(xPosition, altitude * lowerAreaBoundaries.height + lowerAreaBoundaries.yMin, 0);
 
-        GameObject bullet = (GameObject) Instantiate(BulletToFire, position, Quaternion.Euler(0, 0, angle));
+        GameObject bullet = (GameObject) Instantiate(BulletToFire, position, Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg + -90.0f));
         bullet.rigidbody2D.velocity = new Vector2(xVelocity, yVelocity);
     }
 }
