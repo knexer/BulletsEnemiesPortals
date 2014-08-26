@@ -11,8 +11,8 @@ public class OptionsDictionary : MonoBehaviour {
 
     public GUISkin skin;
     private bool hasShowedMessage = false;
-    private const int height = 600;
-    private const int width = 600;
+    private const int height = 500;
+    private const int width = 700;
 
     private string startText;
 
