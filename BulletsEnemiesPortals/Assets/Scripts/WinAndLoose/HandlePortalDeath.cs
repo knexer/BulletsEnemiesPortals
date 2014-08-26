@@ -14,8 +14,7 @@ public class HandlePortalDeath : MonoBehaviour {
     }
 
     private void onDeath() {
-        numVotes--;
-        if (numVotes == 0)
+        if (numVotes <= 1)
         {
             Time.timeScale = 0;
             Screen.lockCursor = false;
@@ -25,5 +24,10 @@ public class HandlePortalDeath : MonoBehaviour {
             message.skin = skin;
             message.gameOverMessage = "You Win!";
         }
+    }
+
+    void OnDestroy()
+    {
+        numVotes--;
     }
 }

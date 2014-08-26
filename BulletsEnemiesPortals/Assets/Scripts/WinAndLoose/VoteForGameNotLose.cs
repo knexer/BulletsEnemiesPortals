@@ -15,8 +15,7 @@ public class VoteForGameNotLose : MonoBehaviour {
 
     void onDeath()
     {
-        numVotes--;
-        if (numVotes <= 0)
+        if (numVotes <= 1)
         {
             Time.timeScale = 0;
             Screen.lockCursor = false;
@@ -26,5 +25,10 @@ public class VoteForGameNotLose : MonoBehaviour {
             message.skin = skin;
             message.gameOverMessage = "You Lose!";
         }
+    }
+
+    void OnDestroy()
+    {
+        numVotes--;
     }
 }
