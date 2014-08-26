@@ -19,7 +19,10 @@ public class UnlockData : MonoBehaviour {
 
     public void ActivateUnlock()
     {
-        GameObject instantiatedEffector = (GameObject)Instantiate(UnlockEffector);
-        instantiatedEffector.SetActive(true);
+        if (isActivated && null != UnlockEffector)
+        {
+            GameObject instantiatedEffector = (GameObject)Instantiate(UnlockEffector);
+            instantiatedEffector.SetActive(true);
+        }
     }
 }
