@@ -3,7 +3,6 @@ using System.Collections;
 
 public class HandlePortalDeath : MonoBehaviour {
 
-    private static bool isShuttingDown = false;
     private static int numVotes = 0;
 
     public GUISkin skin;
@@ -11,18 +10,13 @@ public class HandlePortalDeath : MonoBehaviour {
     void Start()
     {
         numVotes++;
-    }
- 
-    void OnApplicationQuit() {
-        isShuttingDown = true;
+        gameObject.GetComponent<TakeDamage>().OnDeath += () => onDeath();
     }
 
-    void OnDestroy() {
+    private void onDeath() {
         numVotes--;
         if (numVotes == 0)
         {
-            if (isShuttingDown) return;
-
             Time.timeScale = 0;
             Screen.lockCursor = false;
             GameObject gameOver = new GameObject();

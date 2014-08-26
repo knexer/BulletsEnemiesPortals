@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 public class TakeDamage : MonoBehaviour {
     public int HP;
@@ -7,6 +8,8 @@ public class TakeDamage : MonoBehaviour {
     public AudioClip soundEffectDie;
 
     private GameObject audioSource;
+
+    public event Action OnDeath;
 
 	void Start () {
         audioSource = new GameObject();
@@ -19,6 +22,9 @@ public class TakeDamage : MonoBehaviour {
             audioSource.transform.position = this.transform.position;
             audioSource.audio.clip = soundEffectDie;
             audioSource.audio.Play();
+            if (OnDeath != null) {
+                OnDeath();
+            }
             Destroy(gameObject);
             return true;
         }
