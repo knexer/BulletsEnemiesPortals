@@ -11,8 +11,8 @@ public class OptionsDictionary : MonoBehaviour {
 
     public GUISkin skin;
     private bool hasShowedMessage = false;
-    private const int height = 500;
-    private const int width = 700;
+    private const int height = 570;
+    private const int width = 750;
 
     private string startText;
 
@@ -27,8 +27,6 @@ public class OptionsDictionary : MonoBehaviour {
         friendlyWorld = worlds[gen.Next(worlds.Length)];
 
         startText = populateText(flavorTexts[gen.Next(flavorTexts.Length)]);
-
-        Debug.LogError("Bullet world: " + bulletWorld.worldName + " - Friendly world: " + friendlyWorld.worldName + " - Enemy world: " + enemyWorld.worldName);
 	}
 
     void OnGUI() {
