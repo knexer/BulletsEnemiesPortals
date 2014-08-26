@@ -19,6 +19,7 @@ public class HandlePortalDeath : MonoBehaviour {
         {
             Time.timeScale = 0;
             Screen.lockCursor = false;
+            HandleWinAndLose.instance.recordWin();
             GameObject gameOver = new GameObject();
             HandleGameOver message = gameOver.AddComponent<HandleGameOver>();
             message.skin = skin;

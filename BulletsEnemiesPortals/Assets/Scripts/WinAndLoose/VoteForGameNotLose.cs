@@ -20,6 +20,7 @@ public class VoteForGameNotLose : MonoBehaviour {
         {
             Time.timeScale = 0;
             Screen.lockCursor = false;
+            HandleWinAndLose.instance.recordLoss();
             GameObject gameOver = new GameObject();
             HandleGameOver message = gameOver.AddComponent<HandleGameOver>();
             message.skin = skin;
