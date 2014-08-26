@@ -14,4 +14,6 @@ public class WorldType : MonoBehaviour {
     public Sprite upper_background;
     public string worldName;
 
+    public GameObject defendee;
+
 }
